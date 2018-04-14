@@ -5,10 +5,10 @@ include "includes/header.php";
 <div class="card bg-light mb-3 capar-anchura mx-auto">
   <div class="card-header">Inicia sesión en tu cuenta</div>
   <div class="card-body">
-    <form>
+    <form action="login.php" method="post">
       <div class="form-group">
         <label for="inputEmail">Dirección de email</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+        <input name="login_email" type="email" class="form-control" id="inputEmail" placeholder="Email">
         <!-- Para hacer que se muestre el texto de feedback cuando es erróneo solo hay
         que añadir la clase "is-invalid" al input.
         <input type="email" class="form-control is-invalid" id="inputEmail" placeholder="Email">
@@ -19,7 +19,7 @@ include "includes/header.php";
       </div>
       <div class="form-group">
         <label for="inputPass">Contraseña</label>
-        <input type="password" class="form-control" id="inputPass" placeholder="Contraseña">
+        <input name="login_password" type="password" class="form-control" id="inputPass" placeholder="Contraseña">
         <div id="password-feedback" class="invalid-feedback">
         Password incorrecto.
         </div>
