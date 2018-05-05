@@ -11,7 +11,6 @@ $conn->connect();
 
 $email = $_POST['login_email'];
 $password = $_POST['login_password'];
-$login_success = false;
 
 $sql_email = $conn->escape_string($email);
 $sql = "SELECT * FROM user WHERE email='".$sql_email."'";
@@ -23,9 +22,11 @@ if ($res && mysqli_num_rows($res) == 1) {
         // login correcto
         createSession($email, $row->username);
         header("Location: index.php");
+        exit();
     } else {
         // login incorrecto
         header("Location: error.php");
+        exit();
     }
 }
 

@@ -11,7 +11,6 @@ $conn->connect();
 $username = $_POST['signup_username'];
 $email = $_POST['signup_email'];
 $password = $_POST['signup_password'];
-$signup_success = false;
 
 $sql_username = $conn->escape_string($username);
 $sql_email = $conn->escape_string($email);
@@ -20,12 +19,12 @@ $sql = "INSERT INTO user VALUES('".$sql_username."', '".$sql_email."', '".$hash_
 $res = $conn->query($sql);
 $conn->close();
 if ($res) {
-    $login_success = true;
-}
-if ($login_success) {
-    header("Location: login_page.php");
+    createSession($email, $username);
+    header("Location: index.php");
+    exit();
 } else {
     header("Location: error.php");
+    exit();
 }
 
 // pie de pagina

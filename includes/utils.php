@@ -6,7 +6,7 @@
 function createSession($pEmail, $pName) {
     session_start();
     // variables de sesión
-    $_SESSION["currentUserEmail"] = $pDni;
+    $_SESSION["currentUserEmail"] = $pEmail;
     $_SESSION["currentUserName"] = $pName;
 }
 
