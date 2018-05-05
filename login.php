@@ -2,6 +2,7 @@
 
 // cabecera de la pagina
 include "includes/header.php";
+include "includes/utils.php";
 
 require_once 'includes/db_connection.php';
 
@@ -19,14 +20,13 @@ $conn->close();
 if ($res && mysqli_num_rows($res) == 1) {
     $row = $res->fetch_object();
     if (password_verify($password, $row->password)) {
-        $login_success = true;
+        // login correcto
+        createSession($email, $row->username);
+        header("Location: index.php");
+    } else {
+        // login incorrecto
+        header("Location: error.php");
     }
-}
-if ($login_success) {
-    // TODO crear una sesión
-    header("Location: index.php");
-} else {
-    header("Location: error.php");
 }
 
 // pie de pagina
