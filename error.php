@@ -5,8 +5,9 @@ include "includes/header.php";
 ?>
 
 <!-- Una página de error de ejemplo -->
-  <h1>No se ha podido hacer login</h1>
-  <p>Ha habido un error al hacer login <a href="login_page.php">volver a intentar.</a></p>
+    <h3>No se ha podido llevar a cabo la operación</h3>
+    <br>
+    <a href="index.php">volver a la página principal</a>
 
 <?php
 // pie de pagina

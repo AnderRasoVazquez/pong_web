@@ -25,11 +25,7 @@ if ($res) {
 if ($login_success) {
     header("Location: login_page.php");
 } else {
-    ?>
-    <h3>No se ha podido llevar a cabo la creación de la cuenta</h3>
-    <br>
-    <a href="index.php">volver a la página principal</a>
-    <?php
+    header("Location: error.php");
 }
 
 // pie de pagina

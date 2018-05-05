@@ -26,7 +26,7 @@ if ($login_success) {
     // TODO crear una sesión
     header("Location: index.php");
 } else {
-    header("Location: login_page.php");
+    header("Location: error.php");
 }
 
 // pie de pagina
