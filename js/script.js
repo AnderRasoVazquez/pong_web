@@ -24,7 +24,7 @@ function checkSignUp() {
   var pass1 = document.forms["signup_form"]["inputPass"].value;
   var pass2 = document.forms["signup_form"]["inputPassRepeat"].value;
   if (isUsernameCorrect(username) && isEmailCorrect(email) && isPassCorrect(pass1) && pass1 == pass2){
-    document.getElementById("login_form").submit();
+    document.getElementById("signup_form").submit();
   } else {
     if (!isUsernameCorrect(username)) {
       document.forms["signup_form"]["inputUser"].classList.add("is-invalid")
