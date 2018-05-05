@@ -1,6 +1,8 @@
 <?php
 
 // clase para conectarse con MySQL
+// código reutilizado mayormente de nuestro proyecto anterior
+// https://github.com/AnderRasoVazquez/proyecto_seguridad/blob/master/includes/DB/Conexion.php
 class Connection {
 
     private $user;
