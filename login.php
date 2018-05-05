@@ -25,7 +25,7 @@ if ($res && mysqli_num_rows($res) == 1) {
         exit();
     } else {
         // login incorrecto
-        header("Location: error.php");
+        header("Location: loging_page.php");
         exit();
     }
 }

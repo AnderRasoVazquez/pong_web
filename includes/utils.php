@@ -3,6 +3,8 @@
 // código reutilizado mayormente de nuestro proyecto anterior
 // https://github.com/AnderRasoVazquez/proyecto_seguridad/blob/master/includes/utilidades.php
 
+include "db_connection.php";
+
 function createSession($pEmail, $pName) {
     session_start();
     // variables de sesión
@@ -29,14 +31,14 @@ function endSession() {
 function emailIsAlreadyUsed($pEmail) {
     $conn = new Connection();
     $conn->connect();
-    $sql_email = $conn->escape_string($email);
-    $sql = "SELECT email FROM user WHERE email='".$hash_password."')";
+    $sql_email = $conn->escape_string($pEmail);
+    $sql = "SELECT * FROM user WHERE email='".$sql_email."'";
     $res = $conn->query($sql);
     $conn->close();
-    if ($res) {
-        return True;
+    if ($res && mysqli_num_rows($res) != 0) {
+        return true;
     } else {
-        return False;
+        return false;
     }
 }
 
