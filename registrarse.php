@@ -5,7 +5,7 @@ include "includes/header.php";
 <div class="card bg-light mb-3 capar-anchura mx-auto">
   <div class="card-header">Registrar nuevo usuario</div>
   <div class="card-body">
-    <form action="signup.php" method="post">
+    <form action="signup.php" method="post" id="signup_form">
       <div class="form-group">
         <label for="inputUser">Nombre de usuario</label>
         <input name="signup_username" type="text" class="form-control" id="inputUser" placeholder="Usuario">
@@ -14,14 +14,14 @@ include "includes/header.php";
         <input type="text" class="form-control is-invalid" id="inputUser" placeholder="Usuario">
         Con javascript se puede cambiar el texto de los divs de feedback para poner el error exacto -->
         <div id="user-feedback" class="invalid-feedback">
-        Nombre de usuario incorrecto.
+          Nombre de usuario incorrecto.
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail">Dirección de email</label>
-        <input name="signup_email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+        <input name="signup_email" type="text" class="form-control" id="inputEmail" placeholder="Email">
         <div id="email-feedback" class="invalid-feedback">
-        Email incorrecto.
+          Email incorrecto.
         </div>
         <small id="emailHelp" class="form-text text-muted">Recuérdalo, lo usarás para iniciar sesión.</small>
       </div>
@@ -29,17 +29,18 @@ include "includes/header.php";
         <label for="inputPass">Contraseña</label>
         <input name="signup_password" type="password" class="form-control" id="inputPass" placeholder="Contraseña">
         <div id="password-feedback" class="invalid-feedback">
-        Password incorrecto.
+          Password incorrecto. ¿Contiene mayúsculas, minúsculas y números?
         </div>
+        <small id="passwordHelp" class="form-text text-muted">La contraseña debe ser de más de 6 caracteres y contener al menos una mayúscula, una minúscula y un número..</small>
       </div>
       <div class="form-group">
         <label for="inputPassRepeat">Repetir contraseña</label>
         <input type="password" class="form-control" id="inputPassRepeat" placeholder="Repetir Contraseña">
         <div id="password-repat-feedback" class="invalid-feedback">
-        El password no es igual al anterior.
+          El password no es igual al anterior.
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Registrarse</button>
+      <button type="button" class="btn btn-primary" onclick="checkSignUp()">Registrarse</button>
     </form>
   </div>
 </div>
