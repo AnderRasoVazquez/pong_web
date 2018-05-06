@@ -3,8 +3,8 @@
 // cabecera de la pagina
 include "includes/header.php";
 include "includes/utils.php";
-
 require_once 'includes/db_connection.php';
+require_once 'includes/password_compat/lib/password.php';
 
 $conn = new Connection();
 $conn->connect();

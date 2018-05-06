@@ -3,6 +3,7 @@
 // cabecera de la pagina
 include "includes/header.php";
 include "includes/utils.php";
+require_once 'includes/password_compat/lib/password.php';
 
 $username = $_POST['signup_username'];
 $email = $_POST['signup_email'];
