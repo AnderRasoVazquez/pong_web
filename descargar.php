@@ -2,8 +2,9 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
-?>
 
+if (isset($_SESSION["currentUserEmail"])) {
+?>
 <h3>Has iniciado sesión, puedes descargar una copia del juego</h3>
 
 <div class="row">
@@ -28,6 +29,9 @@ include "includes/header.php";
 </div>
 
 <?php
+} else {
+    header("Location: login_page.php");
+}
 // pie de pagina
 include "includes/footer.php";
 ?>
