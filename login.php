@@ -23,12 +23,11 @@ if ($res && mysqli_num_rows($res) == 1) {
         createSession($email, $row->username);
         header("Location: index.php");
         exit();
-    } else {
-        // login incorrecto
-        header("Location: login_page.php");
-        exit();
     }
 }
+// login incorrecto
+header("Location: login_page.php");
+exit();
 
 // pie de pagina
 include "includes/footer.php";
