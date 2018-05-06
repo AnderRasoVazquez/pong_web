@@ -12,7 +12,7 @@ class Connection {
     private $connection;
 
     public function __construct() {
-        $conf_file = "db_files/db.conf";
+        $conf_file = "db_files/db_galan.conf";
         $json = json_decode(file_get_contents($conf_file));
         $this->user = $json->{"user"};
         $this->host = $json->{"host"};
