@@ -12,7 +12,7 @@ include "includes/header.php";
    <hr class="my-4">
    <p>No esperes más para probarlo, regístrate para obtener una copia del juego.</p>
    <p class="lead">
-     <a class="btn btn-primary btn-lg" href="login_page.php" role="button">¡Quiero jugar ya!</a>
+     <a class="btn btn-primary btn-lg" href="descargar.php" role="button">¡Quiero jugar ya!</a>
    </p>
  </div>
 
